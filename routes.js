@@ -10,6 +10,6 @@ module.exports = {
 	},
 	'/koplak2' : {
 		controller	: 'hello',
-		action: "koplak2", 
+		action: "koplak2",
 	},
 };

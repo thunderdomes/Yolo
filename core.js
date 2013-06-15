@@ -1,5 +1,8 @@
-module.exports = function Core(app)
+module.exports = function Core()
 {
+	
+	var express = require('express');
+	var app = express();
 
 	var engine = require('ejs-locals');
 
@@ -29,4 +32,6 @@ module.exports = function Core(app)
 			console.log('Controller '+c+' Tidak Ditemukan');
 		}
 	}
+
+	app.listen(5000);
 }

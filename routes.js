@@ -8,8 +8,9 @@ module.exports = {
 		controller	: 'hello',
 		action: "koplak", 
 	},
-	'/koplak2' : {
-		controller	: 'hello',
-		action: "koplak2",
+	'/vanbungkring' : {
+		controller	: 'hello'
 	},
+
+	
 };

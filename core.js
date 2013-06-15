@@ -6,6 +6,7 @@ module.exports = function Core()
 	var app = express();
 	var engine = require('ejs-locals');
 	app.set('views', __dirname + '/views');
+	
 	app.use(express.static(path.join(__dirname, 'public')));
     app.engine('ejs', engine);
     app.set('view engine', 'ejs'); // so you can render('index')

@@ -1,9 +1,14 @@
 module.exports = function Core(app)
 {
-	app.set('views', __dirname + '/views');
-	app.engine('html', require('ejs').renderFile);
-    var routes = require('./routes.js');
 
+	var engine = require('ejs-locals');
+
+	app.set('views', __dirname + '/views');
+
+    app.engine('ejs', engine);
+    app.set('view engine', 'ejs'); // so you can render('index')
+
+    var routes = require('./routes.js');
     var controllers = {};
     for(var route in routes)
 	{

@@ -1,17 +1,22 @@
 module.exports = function Core()
 {
 	
+	//call all modules
 	var express = require('express');
 	var path = require('path');
-	var app = express();
 	var engine = require('ejs-locals');
-	app.set('views', __dirname + '/views');
+	var routes = require('./routes.js');
+	var config = require('./config.js');
+
+	var app = express();
 	
+	///setting up
+	app.set('views', __dirname + '/views');
 	app.use(express.static(path.join(__dirname, 'public')));
     app.engine('ejs', engine);
     app.set('view engine', 'ejs'); // so you can render('index')
 
-    var routes = require('./routes.js');
+   
     var controllers = {};
     for(var route in routes)
 	{
@@ -33,5 +38,5 @@ module.exports = function Core()
 		}
 	}
 
-	app.listen(5000);
+	app.listen(config.port);
 }

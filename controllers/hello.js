@@ -1,6 +1,11 @@
 hello = {
 	index : function(req, res, next){
-		 res.render('hello.ejs',{ what: 'best', who: 'me' });
+		var fileJSON = require('../content/hello.world.json');
+		 res.render('index.ejs',{
+				title:fileJSON,
+				pass:"merdeka",		 	
+		 });
+		  
 	},
 	koplak : function(req, res, next){
 		res.send('koplak');

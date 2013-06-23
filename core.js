@@ -15,8 +15,7 @@ module.exports = function Core()
 	app.use(express.static(path.join(__dirname, 'public')));
     app.engine('ejs', engine);
     app.set('view engine', 'ejs'); // so you can render('index')
-
-   
+     
     var controllers = {};
     for(var route in routes)
 	{
@@ -37,6 +36,5 @@ module.exports = function Core()
 			console.log('Controller '+c+' Tidak Ditemukan');
 		}
 	}
-
 	app.listen(config.port);
 }

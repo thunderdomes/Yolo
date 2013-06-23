@@ -4,13 +4,14 @@ module.exports = {
 	'/' : {
 		controller	: 'hello'
 	},
-	'/koplak' : {
-		controller	: 'hello',
-		action: "koplak", 
+	'/api/' : {
+		controller	: 'api',
 	},
-	'*' : {
-		controller	: 'hello'
+	'/api/negara/:id' : {
+		controller	: 'api',
+		action: 'negara'
 	},
+	
 
 	
 };

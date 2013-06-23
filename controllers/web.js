@@ -6,6 +6,7 @@ web = {
 			if (err) {
 				throw err;
 			}
+			console.log(res);
 			res.render('pages/index.ejs',{
 				title:"merdeka",
 				content:marked(data),
@@ -14,6 +15,11 @@ web = {
 		});
 		 
 	},
+	404:function(req,res){
+		res.render('layout/error_template.ejs');
+
+
+	}
 
 }
 module.exports = web;

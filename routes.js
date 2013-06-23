@@ -11,6 +11,10 @@ module.exports = {
 		controller	: 'api',
 		action: 'negara'
 	},
+	'*':{
+		controller:'web',
+		action:'404'
+	}
 	
 
 	

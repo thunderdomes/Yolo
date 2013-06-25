@@ -14,8 +14,6 @@ web = {
 	pull:function(req,res){
 		function puts(error, stdout, stderr) { sys.puts(stdout) }
 		exec('git pull', puts);
-		exec('forever restartall', puts);
-		
 	}
 
 }

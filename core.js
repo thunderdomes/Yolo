@@ -7,6 +7,7 @@ module.exports = function Core()
 	var engine = require('ejs-locals');
 	var routes = require('./routes.js');
 	var config = require('./config.js');
+	var mysql = require('mysql');
 
 	var app = express();
 	

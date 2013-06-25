@@ -6,7 +6,6 @@ web = {
 			if (err) {
 				throw err;
 			}
-			console.log(res);
 			res.render('pages/index.ejs',{
 				title:"merdeka",
 				content:marked(data),

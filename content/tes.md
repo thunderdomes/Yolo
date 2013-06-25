@@ -1,28 +1,100 @@
-Using this tool
----------------
+Title: How to Install Node.js
+Author: Node Knockout
+Date: Sat, 11 Sep 2010 22:40:19 GMT
+Node: v0.2.1
 
-This page lets you create HTML by entering text in a simple format that's easy to read and write.
+This was the first in a series of posts leading up to
+[Node.js Knockout][] on how to use [node.js][].
 
-  - Type Markdown text in the left window
-  - See the HTML in the right
+I have been given permission to repost the articles from the contest here (in wheat format) for general consumption.  Expect more to come.
 
-Markdown is a lightweight markup language based on the formatting conventions that people naturally use in email.  As [John Gruber] writes on the [Markdown site] [1]:
+In this post we detail how to install node on [Mac][], [Ubuntu][],
+and [Windows][].
 
-> The overriding design goal for Markdown's
-> formatting syntax is to make it as readable 
-> as possible. The idea is that a
-> Markdown-formatted document should be
-> publishable as-is, as plain text, without
-> looking like it's been marked up with tags
-> or formatting instructions.
+## Mac
 
-This document is written in Markdown; you can see the plain-text version on the left.  To get a feel for Markdown's syntax, type some text into the left window and watch the results in the right.  You can see a Markdown syntax guide by switching the right-hand window from *Preview* to *Syntax Guide*.
+If you're using the excellent [homebrew][] package manager, you can
+install node with one command: `brew install node`.
 
-Showdown is a Javascript port of Markdown.  You can get the full [source code] by clicking on the version number at the bottom of the page.
+Otherwise, follow the below steps:
 
-**Start with a [blank page] or edit this document in the left window.**
+1.  [Install Xcode][].
+2.  [Install git][].
+3.  Run the following commands:
 
-  [john gruber]: http://daringfireball.net/
-  [1]: http://daringfireball.net/projects/markdown/
-  [source code]: http://www.attacklab.net/showdown-v0.9.zip
-  [blank page]: ?blank=1 "Clear all text"
+<how-to-install-nodejs/darwin_setup.sh>
+
+You can check it worked with a simple [Hello, World!][] example.
+
+## Ubuntu
+
+1.  Install the dependencies:
+    -   `sudo apt-get install g++ curl libssl-dev apache2-utils`
+    -   `sudo apt-get install git-core`
+
+2.  Run the following commands:
+
+<how-to-install-nodejs/ubuntu_setup.sh>
+
+You can check it worked with a simple [Hello, World!][] example.
+
+Thanks to [code-diesel][] for the Ubuntu dependencies.
+
+## Windows
+
+Currently, you must use [cygwin][] to install node. To do so,
+follow these steps:
+
+1.  [Install cygwin][].
+2.  Use `setup.exe` in the cygwin folder to install the following
+    packages:
+    -   devel &rarr; openssl
+    -   devel &rarr; g++-gcc
+    -   devel &rarr; make
+    -   python &rarr; python
+    -   devel &rarr; git
+
+3.  Open the cygwin command line with
+    `Start > Cygwin > Cygwin Bash Shell`.
+4.  Run the below commands to download and build node.
+
+<how-to-install-nodejs/cygwin_setup.sh>
+
+For more details, including information on troubleshooting, please
+see the [GitHub wiki page][].
+
+## Hello Node.js!
+
+Here's a quick program to make sure everything is up and running
+correctly:
+
+<how-to-install-nodejs/hello_node.js>
+
+Run the code with the `node` command line utility:
+
+    > node hello_node.js
+    Server running at http://127.0.0.1:8124/
+
+
+Now, if you navigate to [http://127.0.0.1:8124/][] in your browser,
+you should see a nice message.
+
+## Congrats!
+
+You've installed [node.js][].
+
+  [Countdown to Knockout: Post 1 - How to Install Node.js]: http://nodeknockout.posterous.com/countdown-to-knockout-post-1-how-to-install-n
+  [Node.js Knockout]: http://nodeknockout.com/
+  [node.js]: http://nodejs.org/
+  [Mac]: #mac
+  [Ubuntu]: #ubuntu
+  [Windows]: #windows
+  [homebrew]: http://github.com/mxcl/homebrew
+  [Install Xcode]: http://developer.apple.com/technologies/tools/
+  [Install git]: http://help.github.com/mac-git-installation/
+  [Hello, World!]: #hello
+  [code-diesel]: http://www.codediesel.com/linux/installing-node-js-on-ubuntu-10-04/
+  [cygwin]: http://www.cygwin.com/
+  [Install cygwin]: http://www.mcclean-cooper.com/valentino/cygwin_install/
+  [GitHub wiki page]: http://wiki.github.com/ry/node/building-node-on-windowscygwin
+  [http://127.0.0.1:8124/]: http://127.0.0.1:8124/

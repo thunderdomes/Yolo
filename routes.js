@@ -4,6 +4,9 @@ module.exports = {
 	'/' : {
 		controller	: 'web'
 	},
+	'/api/:id' : {
+		controller	: 'api',
+	},
 	'/api/' : {
 		controller	: 'api',
 	},

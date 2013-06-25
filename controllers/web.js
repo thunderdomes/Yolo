@@ -1,7 +1,6 @@
 var fs = require("fs");
-var sys = require('sys');
+var sys = require('util');
 var exec = require('child_process').exec;
-var gith = require('gith').create( 7000 );
 web = {
 	index : function(req, res, next){
 		res.render('pages/index.ejs',{
@@ -14,7 +13,8 @@ web = {
 	},
 	pull:function(req,res){
 		function puts(error, stdout, stderr) { sys.puts(stdout) }
-		exec("./pull.sh", puts);
+		exec("git pull", puts);
+		
 	}
 
 }

@@ -1,1 +1,2 @@
-echo 'A';
+#!/bin/bash
+echo "Memory information"

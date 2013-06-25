@@ -12,6 +12,7 @@ web = {
 		res.render('layout/error_template.ejs');
 	},
 	pull:function(req,res){
+		console.log("Helllllloooo");
 		function puts(error, stdout, stderr) { sys.puts(stdout) }
 		exec('sudo git pull', puts);
 		exec('pwd##jsn##server@@2009', puts);

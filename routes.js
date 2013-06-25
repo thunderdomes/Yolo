@@ -4,6 +4,10 @@ module.exports = {
 	'/' : {
 		controller	: 'web'
 	},
+	'/dev/pull/master/' : {
+		controller	: 'web',
+		action: 'pull'
+	},
 	'/api/:id' : {
 		controller	: 'api',
 	},

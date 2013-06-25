@@ -1,5 +1,5 @@
 {
-  "name": "YOLO backend API engine",
+  "name": "yolo-backend",
   "description": "hello world test app",
   "version": "0.0.1",
   "private": false,
@@ -8,6 +8,7 @@
     "ejs": "0.8.4",
     "ejs-locals": "~1.0.2",
     "mysql": "~2.0.0-alpha8",
-    "marked": "~0.2.9"
+    "marked": "~0.2.9",
+    "gith": "~1.0.4"
   }
 }

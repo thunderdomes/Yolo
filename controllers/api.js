@@ -4,7 +4,6 @@ var connection = mysql.createConnection({ host: config.host, user:config.usernam
 	password: config.password, database: config.database});
 
 api = {
-	/*
 	index : function(req, res, next){
 		var per_page=30;
 		var page_now=(req.params.id -1) *per_page;
@@ -55,6 +54,6 @@ api = {
 	}
 
 
-*/
+
 }
 module.exports = api;

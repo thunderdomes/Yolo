@@ -1,6 +1,6 @@
 var config = {
 	//put all together
-	port:3000,
+	port:4000,
 	database:'singosari',
 	host:'localhost',
 	username:'root',

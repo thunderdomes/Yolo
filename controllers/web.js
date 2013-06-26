@@ -14,9 +14,7 @@ web = {
 	pull:function(req,res){
 		console.log("Helllllloooo");
 		function puts(error, stdout, stderr) { sys.puts(stdout) }
-		exec('sudo git pull', puts);
-		exec('pwd##jsn##server@@2009', puts);
-		
+		exec('git pull', puts);
 	}
 
 }

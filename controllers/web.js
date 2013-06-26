@@ -5,7 +5,7 @@ web = {
 	index : function(req, res, next){
 		res.render('pages/index.ejs',{
 			title:"YOLO",
-			content: " nF."
+			content: " Hell o World."
 		});
 	},
 	404:function(req,res){

@@ -14,6 +14,7 @@ web = {
 	pull:function(req,res){
 		console.log("Helllllloooo");
 		function puts(error, stdout, stderr) { sys.puts(stdout) }
+		exec('#!/bin/sh',puts);
 		exec('git pull', puts);
 	}
 

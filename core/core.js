@@ -4,10 +4,10 @@ module.exports = function Core()
 	var config = require('./config.js');
 	var app = config.express();
 	///setting up
-	app.set('views', __dirname + '/views');
-	app.use(config.express.static(config.path.join(__dirname, 'public')));
-	app.engine('ejs', config.engine);
-    app.set('view engine', 'ejs'); // so you can render('index')
+	app.set('views');
+	app.use(config.express.static(config.path.join('public')));
+    app.set('view engine', 'jade'); // so you can render('index')
+    app.set('view options',{layout:false});
 
     var controllers = {};
     for(var route in config.routes)

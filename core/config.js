@@ -9,7 +9,6 @@ var config = {
 	//call all modules
 	express : require('express'),
 	path :require('path'),
-	engine :require('ejs-locals'),
 	routes :require('./routes.js'),
 	Sequelize : require("sequelize"),
 	format :require('util').format,

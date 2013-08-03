@@ -5,6 +5,7 @@ module.exports = function Core()
 	var app = config.express();
 	///setting up
 	app.set('views');
+    app.use(config.express.logger('dev'));
 	app.use(config.express.static(config.path.join('public')));
     app.set('view engine', 'jade'); // so you can render('index')
     app.set('view options',{layout:false});

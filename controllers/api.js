@@ -1,7 +1,4 @@
-var mysql = require('mysql');
 var config = require('../core/config.js');
-var connection = mysql.createConnection({ host: config.host, user:config.username,  
-	password: config.password, database: config.database});
 
 api = {
 	index : function(req, res, next){
@@ -13,47 +10,29 @@ api = {
 
 		}
 		var total_data=0;
-		if (connection) {
-			connection.query('select count(id) as total  from locations', function(err, rows, fields) {
-				total_data=rows[0].total;
-
+		config.Sequelize.query("SELECT * FROM users").success(function(myTableRows) {
+			console.log(myTableRows.length);
+			res.contentType('application/json');
+			res.writeHead(200, {
+				'Content-Type': 'application/json'
 			});
-			connection.query('select * from locations order by name limit ?,??',[page_now],[per_page.toString()],function(err, rows, fields) {
-				if (err) throw err;
-				res.contentType('application/json');
-				//res.write(JSON.stringify(rows.map(function (msg){return {msgId: msg.id}; })));
-				res.writeHead(200, {
-					'Content-Type': 'application/json'
-				});
-				res.write(JSON.stringify({ 
-					count: rows.length,
-					page:parseInt(req.params.id),
-					total:Math.ceil( total_data/per_page),
-					data:rows.map(function (msg){return {
-						id: msg.id,
-						name:msg.name,
-						jo_name:msg.name_en}}),
-				})
-				);
-				res.end();
-
-
+			res.write(JSON.stringify({
+				count: myTableRows.length,
+			}));
+			res.end();
+			/*
+			res.contentType('application/json');
+			res.writeHead(200, {
+				'Content-Type': 'application/json'
 			});
-			
-			connection.on('close', function(err) {
-				if (err) {
-					connection = mysql.createConnection(connection.config);
-				} else {
-					console.log('Connection closed normally.');
-				}
+			res.write(JSON.stringify({
+				count: myTableRows.length,
 			});
+*/
+		});
 		}
-	},
-	negara : function(req, res, next){
+
+
 
 	}
-
-
-
-}
-module.exports = api;
+	module.exports = api;

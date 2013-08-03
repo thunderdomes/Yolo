@@ -11,7 +11,6 @@ var config = {
 	path :require('path'),
 	engine :require('ejs-locals'),
 	routes :require('./routes.js'),
-	mysql :require('mysql'),
 	Sequelize : require("sequelize"),
 	format :require('util').format,
 	MongoClient : require('mongodb').MongoClient,

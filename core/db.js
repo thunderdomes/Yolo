@@ -71,6 +71,3 @@ config.Sequelize = new config.Sequelize(config.database, config.username, config
   language: 'en'
 
 })
-config.Sequelize.query("SELECT * FROM users").success(function(myTableRows) {
-  console.log(myTableRows)
-})

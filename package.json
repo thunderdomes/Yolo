@@ -7,7 +7,6 @@
     "express": "3.x",
     "ejs": "0.8.4",
     "ejs-locals": "~1.0.2",
-    "mysql": "~2.0.0-alpha8",
     "marked": "~0.2.9",
     "gith": "~1.0.4",
     "socket.io": "~0.9.16",

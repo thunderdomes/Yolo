@@ -10,12 +10,6 @@ web = {
 	},
 	404:function(req,res){
 		res.render('layout/error_template.ejs');
-	},
-	pull:function(req,res){
-		console.log("Helllllloooo");
-		function puts(error, stdout, stderr) { sys.puts(stdout) }
-		exec('#!/bin/sh',puts);
-		exec('git pull', puts);
 	}
 
 }

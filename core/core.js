@@ -1,28 +1,21 @@
 module.exports = function Core()
 {
-	
-	//call all modules
-	var express = require('express');
-	var path = require('path');
-	var engine = require('ejs-locals');
-	var routes = require('./routes.js');
+	var db = require('./db.js');
 	var config = require('./config.js');
-	var mysql = require('mysql');
-
-	var app = express();
+	var app = config.express();
 	///setting up
 	app.set('views', __dirname + '/views');
-	app.use(express.static(path.join(__dirname, 'public')));
-	app.engine('ejs', engine);
+	app.use(config.express.static(config.path.join(__dirname, 'public')));
+	app.engine('ejs', config.engine);
     app.set('view engine', 'ejs'); // so you can render('index')
 
     var controllers = {};
-    for(var route in routes)
+    for(var route in config.routes)
     {
-    	var c = routes[route].controller;
-    	var a = routes[route].action || 'index';
+    	var c = config.routes[route].controller;
+    	var a = config.routes[route].action || 'index';
     	if(typeof controllers[c]  == 'undefined'){
-    		controllers[c] = require('./controllers/'+c+'.js');
+    		controllers[c] = require('../controllers/'+c+'.js');
     	}
     	if(typeof controllers[c]  != 'undefined'){
     		if(typeof controllers[c][a]  == 'undefined'){

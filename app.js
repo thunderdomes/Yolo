@@ -1,1 +1,1 @@
-var core = require('./core')();
+var core = require('./core/core')();

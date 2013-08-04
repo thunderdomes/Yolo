@@ -1,8 +1,10 @@
 module.exports = function Core()
 {
-	var db = require('./db.js');
+
 	var config = require('./config.js');
+
 	var app = config.express();
+
 	///setting up
 	app.set('views');
     app.use(config.express.logger('dev'));
